@@ -1,0 +1,884 @@
+[
+  {
+    "name": "user_id",
+    "category": "User",
+    "value_type": "string",
+    "description": "Unique ID of the customer or user account.",
+    "example": "usr_1001",
+    "aliases": [
+      "customer id",
+      "account id",
+      "shopper id",
+      "user account id",
+      "customer record id",
+      "account lookup id",
+      "user reference",
+      "user record id"
+    ]
+  },
+  {
+    "name": "user_name",
+    "category": "User",
+    "value_type": "string",
+    "description": "The customer's name as shown on the account.",
+    "example": "Alice Chen",
+    "aliases": [
+      "customer name",
+      "account holder name",
+      "shopper name",
+      "name on the account",
+      "account display name",
+      "customer profile name"
+    ]
+  },
+  {
+    "name": "email",
+    "category": "User",
+    "value_type": "string",
+    "description": "The email address saved on the customer account. It can also be used to look up the user.",
+    "example": "alice@example.com",
+    "aliases": [
+      "email address",
+      "account email",
+      "customer email",
+      "shopper email",
+      "contact email",
+      "email on file"
+    ]
+  },
+  {
+    "name": "phone",
+    "category": "User",
+    "value_type": "string",
+    "description": "The phone number saved on the customer account. It can also be used to look up the user.",
+    "example": "+1-555-0100",
+    "aliases": [
+      "phone number",
+      "contact number",
+      "account phone",
+      "customer phone",
+      "contact phone",
+      "phone on file"
+    ]
+  },
+  {
+    "name": "default_address",
+    "category": "User",
+    "value_type": "string",
+    "description": "The default shipping address saved on the customer account.",
+    "example": "123 Market St, San Francisco, CA",
+    "aliases": [
+      "default shipping address",
+      "shipping address on file",
+      "primary shipping address",
+      "saved shipping address",
+      "default address on file",
+      "primary address for delivery"
+    ]
+  },
+  {
+    "name": "default_payment_method_id",
+    "category": "User",
+    "value_type": "string",
+    "description": "The ID of the payment method set as the user's default choice. This is the preferred payment method on file, not necessarily the one actually used for a particular payment.",
+    "example": "pm_9001",
+    "aliases": [
+      "primary method id",
+      "default method id",
+      "saved method id",
+      "preferred method id",
+      "payment method on file id",
+      "default payment method",
+      "default payment method reference",
+      "default payment method record id"
+    ]
+  },
+  {
+    "name": "product_id",
+    "category": "Product",
+    "value_type": "string",
+    "description": "Unique ID of the product. This is the SPU-level product record, not a specific size or color option.",
+    "example": "prod_2001",
+    "aliases": [
+      "catalog product id",
+      "parent product id",
+      "product record id",
+      "catalog item id",
+      "main catalog item id",
+      "product reference"
+    ]
+  },
+  {
+    "name": "product_name",
+    "category": "Product",
+    "value_type": "string",
+    "description": "The product name shown to shoppers.",
+    "example": "Classic Hoodie",
+    "aliases": [
+      "item name",
+      "product title",
+      "catalog name",
+      "shopper facing name",
+      "listing name"
+    ]
+  },
+  {
+    "name": "base_price",
+    "category": "Product",
+    "value_type": "number",
+    "description": "The product's base price before any order-specific pricing is applied.",
+    "example": "79.99",
+    "aliases": [
+      "list price",
+      "catalog price",
+      "standard price",
+      "starting price",
+      "shelf price",
+      "base amount",
+      "base rate"
+    ]
+  },
+  {
+    "name": "variant_id",
+    "category": "Product Variant",
+    "value_type": "string",
+    "description": "Unique ID of a specific product variant, such as one color and size combination. Unlike product_id, this points to the exact SKU being bought.",
+    "example": "var_3001",
+    "aliases": [
+      "sku id",
+      "exact variant id",
+      "variant sku",
+      "product option id",
+      "purchasable sku id",
+      "variant reference",
+      "variant record id"
+    ]
+  },
+  {
+    "name": "color",
+    "category": "Product Variant",
+    "value_type": "string",
+    "description": "The color of the product variant.",
+    "example": "Black",
+    "aliases": [
+      "variant color",
+      "selected color",
+      "color option",
+      "item color",
+      "finish color"
+    ]
+  },
+  {
+    "name": "size",
+    "category": "Product Variant",
+    "value_type": "string",
+    "description": "The size of the product variant.",
+    "example": "M",
+    "aliases": [
+      "variant size",
+      "selected size",
+      "size option",
+      "item size",
+      "sizing choice"
+    ]
+  },
+  {
+    "name": "order_draft_id",
+    "category": "Order Draft",
+    "value_type": "string",
+    "description": "Unique ID of an order draft, meaning the shopper's in-progress cart or pre-checkout order before it becomes a real order.",
+    "example": "order_draft_id",
+    "aliases": [
+      "draft order id",
+      "cart id",
+      "precheckout order id",
+      "draft cart id",
+      "in progress order id",
+      "order draft",
+      "order draft reference",
+      "order draft record id"
+    ]
+  },
+  {
+    "name": "draft_status",
+    "category": "Order Draft",
+    "value_type": "string",
+    "description": "The current state of the order draft, such as still being edited, waiting to be submitted, or expired.",
+    "example": "draft_status",
+    "aliases": [
+      "cart status",
+      "draft order status",
+      "cart state",
+      "precheckout status",
+      "checkout draft state",
+      "draft state",
+      "draft current status"
+    ]
+  },
+  {
+    "name": "updated_time",
+    "category": "Order Draft",
+    "value_type": "timestamp",
+    "description": "The most recent time the order draft was updated.",
+    "example": "updated_time",
+    "aliases": [
+      "last updated time",
+      "last modified time",
+      "draft updated at",
+      "cart updated at",
+      "most recent cart update",
+      "updated timestamp",
+      "updated recorded at"
+    ]
+  },
+  {
+    "name": "order_draft_item_id",
+    "category": "Order Draft Item",
+    "value_type": "string",
+    "description": "Unique ID of a line item inside an order draft. This is the draft-side item ID before checkout, not the final order_item_id created after the order is placed. Within a draft, the pair (order_draft_id, variant_id) can also uniquely identify the same draft item. When this field appears on an order item, it points back to the draft item that the order line came from.",
+    "example": "order_draft_item_id",
+    "aliases": [
+      "draft item id",
+      "cart line item id",
+      "draft line id",
+      "precheckout line item id",
+      "cart item reference",
+      "order draft item",
+      "order draft item reference",
+      "order draft item record id"
+    ]
+  },
+  {
+    "name": "draft_quantity",
+    "category": "Order Draft Item",
+    "value_type": "number",
+    "description": "How many units the shopper currently wants for this draft line item before the order is placed.",
+    "example": "draft_quantity",
+    "aliases": [
+      "cart quantity",
+      "requested quantity",
+      "draft line quantity",
+      "quantity in the cart",
+      "current requested units",
+      "draft units",
+      "draft count"
+    ]
+  },
+  {
+    "name": "proposed_unit_price",
+    "category": "Order Draft Item",
+    "value_type": "number",
+    "description": "The estimated per-item price shown for this draft line item before the order is finalized.",
+    "example": "proposed_unit_price",
+    "aliases": [
+      "quoted unit price",
+      "draft unit price",
+      "preview unit price",
+      "estimated unit price",
+      "quoted price per item",
+      "proposed unit amount",
+      "proposed unit rate"
+    ]
+  },
+  {
+    "name": "pricing_snapshot_id",
+    "category": "Pricing Snapshot",
+    "value_type": "string",
+    "description": "Unique ID of a saved pricing result for an order draft. It represents the quote used for the draft at a particular moment before checkout. If the draft is later submitted as an order, this is the pricing snapshot that the order points back to.",
+    "example": "pricing_snapshot_id",
+    "aliases": [
+      "quote id",
+      "pricing quote id",
+      "saved quote id",
+      "price snapshot id",
+      "quote record id",
+      "pricing snapshot",
+      "pricing snapshot reference",
+      "pricing snapshot record id"
+    ]
+  },
+  {
+    "name": "snapshot_status",
+    "category": "Pricing Snapshot",
+    "value_type": "string",
+    "description": "The current state of the pricing snapshot, such as valid, expired, or pending confirmation.",
+    "example": "snapshot_status",
+    "aliases": [
+      "quote status",
+      "pricing snapshot state",
+      "quote state",
+      "saved quote status",
+      "quote lifecycle state",
+      "snapshot state",
+      "snapshot current status"
+    ]
+  },
+  {
+    "name": "quoted_total_amount",
+    "category": "Pricing Snapshot",
+    "value_type": "number",
+    "description": "The total amount quoted to the shopper in that pricing snapshot. This is the overall quoted total for the draft at that moment.",
+    "example": "quoted_total_amount",
+    "aliases": [
+      "quote total",
+      "quoted grand total",
+      "estimated order total",
+      "total in the quote",
+      "preview order total",
+      "quoted total total",
+      "quoted total value"
+    ]
+  },
+  {
+    "name": "order_id",
+    "category": "Order",
+    "value_type": "string",
+    "description": "Unique ID of the final placed order. Unlike order_draft_id, this refers to the real order after checkout.",
+    "example": "ord_4001",
+    "aliases": [
+      "placed order id",
+      "finalized order id",
+      "checkout order id",
+      "live order id",
+      "completed order record id",
+      "order reference",
+      "order record id"
+    ]
+  },
+  {
+    "name": "order_status",
+    "category": "Order",
+    "value_type": "string",
+    "description": "The current state of the placed order, such as placed, paid, shipped, delivered, or canceled. This is for the final order, not the draft.",
+    "example": "order_status",
+    "aliases": [
+      "placed order status",
+      "final order status",
+      "order state after checkout",
+      "live order status",
+      "placed order state",
+      "order state",
+      "order current status"
+    ]
+  },
+  {
+    "name": "created_time",
+    "category": "Order",
+    "value_type": "timestamp",
+    "description": "The time when the final order was created after checkout.",
+    "example": "2026-04-08T09:30:00Z",
+    "aliases": [
+      "order created at",
+      "order creation time",
+      "checkout completion time",
+      "order created time",
+      "order opened at",
+      "created timestamp",
+      "created recorded at"
+    ]
+  },
+  {
+    "name": "order_item_id",
+    "category": "Order Item",
+    "value_type": "string",
+    "description": "Unique ID of a line item in the final placed order. Unlike order_draft_item_id, this is the order-side item record created after checkout. Within an order, the pair (order_id, variant_id) can also uniquely identify the same order line.",
+    "example": "item_5001",
+    "aliases": [
+      "line item id",
+      "order line id",
+      "placed order item id",
+      "final order line id",
+      "order item reference",
+      "order item",
+      "order item record id"
+    ]
+  },
+  {
+    "name": "purchased_quantity",
+    "category": "Order Item",
+    "value_type": "number",
+    "description": "How many units were actually recorded on the final order line. Unlike draft_quantity, this is the quantity on the placed order.",
+    "example": "purchased_quantity",
+    "aliases": [
+      "ordered quantity",
+      "final quantity",
+      "order line quantity",
+      "bought quantity",
+      "purchased units",
+      "purchased count"
+    ]
+  },
+  {
+    "name": "unit_price",
+    "category": "Order Item",
+    "value_type": "number",
+    "description": "The per-item price recorded on the final order line. Unlike proposed_unit_price, this is the price that ended up on the placed order.",
+    "example": "79.99",
+    "aliases": [
+      "final unit price",
+      "charged unit price",
+      "order line price",
+      "price per item",
+      "booked unit price",
+      "unit amount",
+      "unit rate"
+    ]
+  },
+  {
+    "name": "payment_method_id",
+    "category": "Payment Method",
+    "value_type": "string",
+    "description": "Unique ID of a saved payment method. This identifies the payment instrument itself, such as a card or account, not a payment attempt or payment record.",
+    "example": "pm_7001",
+    "aliases": [
+      "saved payment method id",
+      "payment instrument id",
+      "billing method id",
+      "instrument id",
+      "stored payment reference",
+      "payment method",
+      "payment method reference",
+      "payment method record id"
+    ]
+  },
+  {
+    "name": "payment_method_type",
+    "category": "Payment Method",
+    "value_type": "string",
+    "description": "The kind of payment method, such as a credit card, debit card, or digital wallet.",
+    "example": "credit_card",
+    "aliases": [
+      "instrument type",
+      "payment type",
+      "method category",
+      "payment instrument type",
+      "funding method type",
+      "payment method category",
+      "payment method kind"
+    ]
+  },
+  {
+    "name": "account_number",
+    "category": "Payment Method",
+    "value_type": "string",
+    "description": "The stored or masked account number for the payment method, such as a card number or its visible last few digits. It can also be used to identify the payment method.",
+    "example": "**** **** **** 4242",
+    "aliases": [
+      "masked account number",
+      "payment account reference",
+      "funding account reference",
+      "card number",
+      "payment account number",
+      "account reference number",
+      "account on file"
+    ]
+  },
+  {
+    "name": "payment_intent_id",
+    "category": "Payment Intent",
+    "value_type": "string",
+    "description": "Unique ID of the payment intent for an order. This represents the stage where the system is preparing to start a payment, not the final payment result.",
+    "example": "payment_intent_id",
+    "aliases": [
+      "checkout intent id",
+      "payment initiation id",
+      "payment session id",
+      "intent record id",
+      "payment setup id",
+      "payment intent",
+      "payment intent reference",
+      "payment intent record id"
+    ]
+  },
+  {
+    "name": "intent_status",
+    "category": "Payment Intent",
+    "value_type": "string",
+    "description": "The current state of the payment intent at the intent stage, such as pending confirmation, waiting for authorization, or canceled. This is earlier than the later authorization and payment records.",
+    "example": "intent_status",
+    "aliases": [
+      "payment intent status",
+      "checkout intent status",
+      "payment session status",
+      "intent state",
+      "pre authorization payment state",
+      "intent current status"
+    ]
+  },
+  {
+    "name": "auth_id",
+    "category": "Authorization",
+    "value_type": "string",
+    "description": "Unique ID of the authorization record for a payment attempt. This is the step where the payment processor approves or declines the charge, and it sits between payment_intent_id and payment_id.",
+    "example": "auth_id",
+    "aliases": [
+      "authorization id",
+      "processor auth id",
+      "payment auth id",
+      "authorization record id",
+      "processor approval id",
+      "auth reference",
+      "auth record id"
+    ]
+  },
+  {
+    "name": "auth_status",
+    "category": "Authorization",
+    "value_type": "string",
+    "description": "The current state of the authorization step, such as approved, declined, or waiting for additional verification.",
+    "example": "auth_status",
+    "aliases": [
+      "authorization status",
+      "processor approval status",
+      "payment authorization state",
+      "auth state",
+      "card approval state",
+      "auth current status"
+    ]
+  },
+  {
+    "name": "auth_code",
+    "category": "Authorization",
+    "value_type": "string",
+    "description": "The authorization code or other authorization credential returned by the payment processor.",
+    "example": "auth_code",
+    "aliases": [
+      "authorization code",
+      "approval code",
+      "processor auth code",
+      "payment approval code",
+      "card authorization code",
+      "auth reference code",
+      "auth tag"
+    ]
+  },
+  {
+    "name": "payment_id",
+    "category": "Payment",
+    "value_type": "string",
+    "description": "Unique ID of the recorded payment itself. Unlike payment_intent_id or auth_id, this is the actual payment record after the payment flow reaches that stage.",
+    "example": "pay_6001",
+    "aliases": [
+      "payment record id",
+      "completed payment id",
+      "charge id",
+      "posted payment id",
+      "settled payment record",
+      "payment reference"
+    ]
+  },
+  {
+    "name": "payment_status",
+    "category": "Payment",
+    "value_type": "string",
+    "description": "The current state of the payment record, such as paid, failed, reversed, or refunded. This is the status of the actual payment, not just the intent or auth step.",
+    "example": "paid",
+    "aliases": [
+      "payment record status",
+      "charge status",
+      "payment state",
+      "payment processing status",
+      "settlement status",
+      "payment current status"
+    ]
+  },
+  {
+    "name": "payment_time",
+    "category": "Payment",
+    "value_type": "timestamp",
+    "description": "The time when the payment was completed.",
+    "example": "2026-04-08T09:35:00Z",
+    "aliases": [
+      "paid at",
+      "payment recorded at",
+      "charge time",
+      "payment completion time",
+      "funds captured at",
+      "payment timestamp"
+    ]
+  },
+  {
+    "name": "warehouse_request_id",
+    "category": "Warehouse Request",
+    "value_type": "string",
+    "description": "Unique ID of the warehouse request for one fulfillment group of an order. This means the order has entered warehouse or fulfillment processing. The same order can have multiple warehouse requests.",
+    "example": "warehouse_request_id",
+    "aliases": [
+      "fulfillment request id",
+      "warehouse job id",
+      "fulfillment job id",
+      "pick pack request id",
+      "warehouse work order id",
+      "warehouse request",
+      "warehouse request reference",
+      "warehouse request record id"
+    ]
+  },
+  {
+    "name": "warehouse_request_status",
+    "category": "Warehouse Request",
+    "value_type": "string",
+    "description": "The current state of that warehouse request in the fulfillment process, such as queued, picking, packed, or canceled.",
+    "example": "warehouse_request_status",
+    "aliases": [
+      "fulfillment request status",
+      "warehouse job status",
+      "fulfillment queue status",
+      "pick pack status",
+      "warehouse processing state",
+      "warehouse request state",
+      "warehouse request current status"
+    ]
+  },
+  {
+    "name": "warehouse_request_time",
+    "category": "Warehouse Request",
+    "value_type": "timestamp",
+    "description": "The time when that warehouse request was initiated.",
+    "example": "warehouse_request_time",
+    "aliases": [
+      "fulfillment time",
+      "warehouse created at",
+      "fulfillment requested at",
+      "pick pack request time",
+      "warehouse intake time",
+      "warehouse request timestamp",
+      "warehouse request recorded at"
+    ]
+  },
+  {
+    "name": "shipment_id",
+    "category": "Shipment",
+    "value_type": "string",
+    "description": "Unique ID of the shipment record created for a warehouse request. In this simplified setup, one warehouse request corresponds to one shipment.",
+    "example": "shipment_id",
+    "aliases": [
+      "parcel shipment id",
+      "outbound shipment id",
+      "package shipment id",
+      "shipment record id",
+      "parcel record id",
+      "shipment reference"
+    ]
+  },
+  {
+    "name": "shipment_status",
+    "category": "Shipment",
+    "value_type": "string",
+    "description": "The current state of that shipment, such as label created, in transit, delivered, or exception.",
+    "example": "shipment_status",
+    "aliases": [
+      "parcel status",
+      "outbound shipment status",
+      "package status",
+      "shipment state",
+      "carrier handoff status",
+      "shipment current status"
+    ]
+  },
+  {
+    "name": "tracking_number",
+    "category": "Shipment",
+    "value_type": "string",
+    "description": "The tracking number for that shipment.",
+    "example": "tracking_number",
+    "aliases": [
+      "tracking code",
+      "parcel tracking number",
+      "shipment tracking code",
+      "carrier tracking number",
+      "parcel reference number",
+      "tracking reference number",
+      "tracking on file"
+    ]
+  },
+  {
+    "name": "delivery_attempt_id",
+    "category": "Delivery Attempt",
+    "value_type": "string",
+    "description": "Unique ID of a specific delivery attempt for a shipment. One shipment can have multiple delivery attempts, so this is narrower than shipment_id.",
+    "example": "delivery_attempt_id",
+    "aliases": [
+      "last mile attempt id",
+      "dropoff attempt id",
+      "delivery try id",
+      "attempt record id",
+      "doorstep attempt reference",
+      "delivery attempt",
+      "delivery attempt reference",
+      "delivery attempt record id"
+    ]
+  },
+  {
+    "name": "attempt_status",
+    "category": "Delivery Attempt",
+    "value_type": "string",
+    "description": "The current state of that specific delivery attempt, such as out for delivery, delivery failed, or delivered. This is for one attempt, not the whole shipment.",
+    "example": "attempt_status",
+    "aliases": [
+      "delivery attempt status",
+      "dropoff status",
+      "last mile status",
+      "delivery try status",
+      "delivery outcome state",
+      "attempt state",
+      "attempt current status"
+    ]
+  },
+  {
+    "name": "attempt_time",
+    "category": "Delivery Attempt",
+    "value_type": "timestamp",
+    "description": "The time when that delivery attempt happened.",
+    "example": "attempt_time",
+    "aliases": [
+      "delivery attempt time",
+      "dropoff time",
+      "delivery timestamp",
+      "last mile attempt time",
+      "delivery visit time",
+      "attempt timestamp",
+      "attempt recorded at"
+    ]
+  },
+  {
+    "name": "return_request_id",
+    "category": "Return Request",
+    "value_type": "string",
+    "description": "Unique ID of the customer's return request for an order. This is the initial 'I want to return this order' step. In this simplified setup, a returned order has one return request.",
+    "example": "return_request_id",
+    "aliases": [
+      "return case id",
+      "return ticket id",
+      "customer return id",
+      "return claim id",
+      "return case reference",
+      "return request",
+      "return request reference",
+      "return request record id"
+    ]
+  },
+  {
+    "name": "return_status",
+    "category": "Return Request",
+    "value_type": "string",
+    "description": "The current state of the return request for that order.",
+    "example": "return_status",
+    "aliases": [
+      "return case status",
+      "return request status",
+      "return state",
+      "customer return status",
+      "return workflow state",
+      "return current status"
+    ]
+  },
+  {
+    "name": "requested_time",
+    "category": "Return Request",
+    "value_type": "timestamp",
+    "description": "The time when the customer initiated that return request.",
+    "example": "requested_time",
+    "aliases": [
+      "return request time",
+      "return requested at",
+      "return filed at",
+      "request submitted at",
+      "return intake time",
+      "requested timestamp",
+      "requested recorded at"
+    ]
+  },
+  {
+    "name": "return_audit_id",
+    "category": "Return Audit",
+    "value_type": "string",
+    "description": "Unique ID of the internal review record for a return request. This is the audit step where the platform or merchant reviews the return. In this simplified setup, each return request has one audit record.",
+    "example": "return_audit_id",
+    "aliases": [
+      "return review id",
+      "internal review id",
+      "review ticket id",
+      "internal return review id",
+      "return approval record id",
+      "return audit",
+      "return audit reference",
+      "return audit record id"
+    ]
+  },
+  {
+    "name": "audit_status",
+    "category": "Return Audit",
+    "value_type": "string",
+    "description": "The current state or outcome of that return audit, such as pending review, approved, or rejected.",
+    "example": "audit_status",
+    "aliases": [
+      "review status",
+      "review outcome",
+      "approval decision",
+      "return review outcome",
+      "return approval state",
+      "audit state",
+      "audit current status"
+    ]
+  },
+  {
+    "name": "refund_id",
+    "category": "Refund",
+    "value_type": "string",
+    "description": "Unique ID of the refund record. This is the final refund-layer record created only after a return audit is approved, linking that approved return to the original payment record. In this simplified setup, one refund record is tied to one return audit and one payment record. Only orders that actually have a refund will have this field.",
+    "example": "ref_8001",
+    "aliases": [
+      "refund record id",
+      "finance refund id",
+      "refund reference",
+      "refund transaction id",
+      "money back record id"
+    ]
+  },
+  {
+    "name": "refund_status",
+    "category": "Refund",
+    "value_type": "string",
+    "description": "The current state of the refund. This field appears only when a return audit has been approved and an actual refund record exists.",
+    "example": "processed",
+    "aliases": [
+      "refund record status",
+      "refund state",
+      "refund processing status",
+      "returned funds status",
+      "refund lifecycle status",
+      "refund current status"
+    ]
+  },
+  {
+    "name": "refund_amount",
+    "category": "Refund",
+    "value_type": "number",
+    "description": "The amount of money returned in the refund. This field appears only when a return audit has been approved and an actual refund record exists.",
+    "example": "79.99",
+    "aliases": [
+      "refunded amount",
+      "return amount",
+      "refund total",
+      "amount refunded",
+      "money returned",
+      "refund value"
+    ]
+  },
+  {
+    "name": "refund_time",
+    "category": "Refund",
+    "value_type": "timestamp",
+    "description": "The time when the refund was made. This field appears only when a return audit has been approved and an actual refund record exists.",
+    "example": "2026-04-09T10:00:00Z",
+    "aliases": [
+      "refunded at",
+      "refund completed at",
+      "refund timestamp",
+      "refund completion time",
+      "money returned at",
+      "refund recorded at"
+    ]
+  }
+]
