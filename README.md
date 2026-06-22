@@ -21,18 +21,16 @@ This is the official repository for **PlanBench-XL**, a benchmark for evaluating
 
 ## 🎯 Project Overview
 
-**PlanBench-XL** tests whether tool-use agents can solve typed retail planning tasks when they cannot see the whole tool universe at once. At each turn, the agent may retrieve relevant tools, call an available tool, or submit a final answer. The runtime tracks discovered tools, trusted and untrusted intermediate values, executable traces, and final-answer correctness.
+**PlanBench-XL** tests whether tool-use agents can solve retail planning tasks when they cannot see the whole tool universe at once. At each turn, the agent may retrieve relevant tools, call an available tool, or submit a final answer. The runtime tracks discovered tools, trusted and untrusted intermediate values, executable traces, and final-answer correctness.
 
 The current release contains a retail-domain benchmark with **327 queries**, **56 datatypes**, and **1,665 tools**.
 
 ## ✨ Core Features
 
-- **Massive Tool Retrieval**: Agents retrieve tools from a large typed tool ecosystem instead of receiving a complete tool list up front.
-- **Long-Horizon Planning**: Ground-truth solution paths span 5 to 9 tool steps, requiring multi-step composition across typed intermediate values.
-- **Noisy Tool Ecosystem**: Retrieved baseline tools can be augmented with noisy sibling tools, capped by `noise.max_total_tools`.
-- **Path-Preserving Blockers**: Blocker configurations replace selected baseline tools while preserving at least one valid solution path according to the configured remaining-path target.
-- **Reproducible Randomization**: Query sampling, blocker selection, noisy-tool allocation, and final tool-order shuffling are seed controlled.
-- **Resume-Friendly Runtime**: Runs write per-query progress files and can resume from existing output directories.
+- **Massive Tool Retrieval**: Agents retrieve tools from a large tool ecosystem instead of receiving a complete tool list up front.
+- **Long-Horizon Planning**: Ground-truth solution paths span at least 5 tool steps, requiring multi-step composition across intermediate values.
+- **Noisy Tool Ecosystem**: Retrieved executable tools can be augmented with noisy sibling tools.
+- **Path-Preserving Blockers**: Blocker configurations simulate corrupted tool access by injecting explicit, implicit, and semantic-misleading failures, while preserving at least one valid solution path for each query.
 - **Detailed Evaluation**: The evaluator reports answer accuracy, turn counts, search/call balance, invalid tool-call rates, noisy-tool usage, and executed ground-truth datatype coverage.
 
 ## 📊 Main Results
