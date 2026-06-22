@@ -1,12 +1,29 @@
 # PlanBench-XL
 
+![](figures/PlanBench_XL.png)
+
+<p align="center">
+  <a href="">
+    <img src="https://img.shields.io/badge/arXiv-Coming%20Soon-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv">
+  </a>
+  <a href="https://huggingface.co/datasets/JiayuJeff/PlanBench-XL">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?style=for-the-badge&logo=huggingface" alt="Hugging Face Data">
+  </a>
+  <a href="https://planbench-xl.github.io/">
+    <img src="https://img.shields.io/badge/Project%20Page-Website-6b5df5?style=for-the-badge&logo=github-pages&logoColor=white" alt="Project Page"/>
+  </a>
+  <a href="#citing-this-work">
+    <img src="https://img.shields.io/badge/Cite-PlanBench--XL-1f6feb?style=for-the-badge&logo=readme&logoColor=white" alt="Cite"/>
+  </a>
+</p>
+
 This is the official repository for **PlanBench-XL**, a benchmark for evaluating LLM agents' **long-horizon planning with massive tool ecosystems** under retrieval noise and path-preserving blocker events.
 
 ## 🎯 Project Overview
 
 **PlanBench-XL** tests whether tool-use agents can solve typed retail planning tasks when they cannot see the whole tool universe at once. At each turn, the agent may retrieve relevant tools, call an available tool, or submit a final answer. The runtime tracks discovered tools, trusted and untrusted intermediate values, executable traces, and final-answer correctness.
 
-The current release contains a retail-domain benchmark with **327 queries**, **56 datatypes**, **185 baseline tools**, **925 noisy tools**, and **555 blocker tools**.
+The current release contains a retail-domain benchmark with **327 queries**, **56 datatypes**, and **1,665 tools**.
 
 ## ✨ Core Features
 
@@ -20,7 +37,7 @@ The current release contains a retail-domain benchmark with **327 queries**, **5
 
 ## 📊 Main Results
 
-The main figure and main results table will be added here.
+![](figures/Main_Table.png)
 
 ## 🚀 Quick Start
 
@@ -77,7 +94,7 @@ python src/env/run.py \
   --run_config src/env/config/runs/retail/gpt-5.4/retail_gpt5.4_default.yaml
 ```
 
-Run a block configuration:
+Run a blocker configuration:
 
 ```bash
 python src/env/run.py \
@@ -199,17 +216,6 @@ The retail benchmark data is stored in `src/data/retail/`:
 | `queries.json` | Natural-language benchmark queries and answers |
 | `paths_set_catalog.json` | Ground-truth path sets for blocker planning and evaluation |
 
-Current retail statistics:
-
-| Item | Count |
-| :--- | ----: |
-| Queries | 327 |
-| Datatypes | 56 |
-| Baseline tools | 185 |
-| Noisy tools | 925 |
-| Blocker tools | 555 |
-| Total tools | 1,665 |
-
 ## 📈 Evaluating Results
 
 Evaluate a completed or partially resumed run directory:
@@ -250,6 +256,8 @@ The current code release targets the retail domain.
 ## 🤝 Contributing
 
 Contributions are welcome. Please open an issue or pull request for bug fixes, new model configs, or benchmark extensions.
+
+<a id="citing-this-work"></a>
 
 ## 📚 Citing this work
 
