@@ -3,8 +3,8 @@
 ![](figures/PlanBench_XL.png)
 
 <p align="center">
-  <a href="">
-    <img src="https://img.shields.io/badge/arXiv-Coming%20Soon-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv">
+  <a href="https://arxiv.org/pdf/2606.22388">
+    <img src="https://img.shields.io/badge/arXiv-Paper-B31B1B?style=for-the-badge&logo=arxiv&logoColor=white" alt="arXiv">
   </a>
   <a href="https://huggingface.co/datasets/JiayuJeff/PlanBench-XL">
     <img src="https://img.shields.io/badge/Hugging%20Face-Data-FFD21E?style=for-the-badge&logo=huggingface" alt="Hugging Face Data">
@@ -259,4 +259,14 @@ Contributions are welcome. Please open an issue or pull request for bug fixes, n
 
 ## 📚 Citing this work
 
-Citation information will be added after release.
+```bibtex
+@misc{liu2026planbenchxlevaluatinglonghorizonplanning,
+  title={PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems},
+  author={Jiayu Liu and Qihan Lin and Cheng Qian and Rui Wang and Emre Can Acikgoz and Xiaocheng Yang and Jiateng Liu and Zhenhailong Wang and Xiusi Chen and Heng Ji and Dilek Hakkani-Tür},
+  year={2026},
+  eprint={2606.22388},
+  archivePrefix={arXiv},
+  primaryClass={cs.AI},
+  url={https://arxiv.org/abs/2606.22388},
+}
+```
