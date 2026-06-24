@@ -11,7 +11,6 @@ htmlcov/
 # Virtual environments
 .venv/
 venv/
-env/
 
 # Local environment and credentials
 .env
@@ -23,7 +22,6 @@ env/
 
 # Runtime outputs
 outputs/
-new_data/
 progress/
 *.jsonl
 *.log

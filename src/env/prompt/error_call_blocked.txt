@@ -1,0 +1,10 @@
+You tried to call a tool that is currently blocked or temporarily unavailable.
+
+You MUST:
+- stop calling this blocked tool for now
+- choose a different valid next step
+
+Please:
+1) Use <retrieve_tools> again if you need other candidate tools.
+2) Select another available tool, or adjust your plan based on the information you already have.
+3) Do not call this blocked tool again unless it later becomes available.

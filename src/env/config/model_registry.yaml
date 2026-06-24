@@ -1,0 +1,10 @@
+openai_gpt54: models/openai/gpt-5.4.yaml
+openai_gpt54_mini: models/openai/gpt-5.4-mini.yaml
+openai_qwen3_8b_local: models/openai/qwen3-8b-local.yaml
+openai_qwen3_14b_local: models/openai/qwen3-14b-local.yaml
+openai_qwen3_32b_local: models/openai/qwen3-32b-local.yaml
+openai_llama3_1_8b_local: models/openai/llama3.1-8b-local.yaml
+openai_llama3_3_70b_local: models/openai/llama3.3-70b-local.yaml
+openai_gemini3.1_pro: models/openai/gemini-3.1-pro.yaml
+openai_gemini3.5_flash: models/openai/gemini-3.5-flash.yaml
+openai_deepseek_v4_flash: models/openai/deepseek-v4-flash.yaml

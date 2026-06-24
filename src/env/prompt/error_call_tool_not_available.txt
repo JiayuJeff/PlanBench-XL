@@ -1,0 +1,9 @@
+The tool identifier you requested has not appeared in any <retrieve_tools> result for this query.
+
+You MUST:
+- First call <retrieve_tools> to retrieve a candidate set of tools.
+- Then choose ONE tool_id/name that has appeared in a retrieval result for this query.
+
+In your next assistant response:
+1) Retrieve tools again with <retrieve_tools>, if needed.
+2) Call one of the tools that has appeared in a retrieval result for this query, using the exact identifier returned there.

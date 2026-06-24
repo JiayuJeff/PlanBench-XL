@@ -1,0 +1,23 @@
+model_id: openai_gpt54_mini
+provider: openai
+api_style: chat_completions
+model_name: gpt-5.4-mini
+
+auth:
+  api_key_env: OPENAI_API_KEY
+  base_url_env: OPENAI_BASE_URL
+  organization_env: OPENAI_ORG_ID
+
+request:
+  temperature: 0.0
+  max_tokens: 8192
+  timeout_seconds: 600
+  max_retries: 3
+  reasoning_effort: null
+
+capabilities:
+  chat_completion_token_param: max_completion_tokens
+  chat_completions_supports_temperature: true
+  tool_calling: true
+  json_mode: true
+  reasoning: false

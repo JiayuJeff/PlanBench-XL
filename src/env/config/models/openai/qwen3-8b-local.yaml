@@ -1,0 +1,23 @@
+model_id: openai_qwen3_8b_local
+provider: openai
+api_style: chat_completions
+model_name: Qwen3-8B
+
+auth:
+  api_key: EMPTY
+  base_url: http://127.0.0.1:8001/v1
+
+request:
+  temperature: 0.0
+  max_tokens: 8192
+  timeout_seconds: 600
+  max_retries: 3
+  reasoning_effort: null
+
+capabilities:
+  tool_calling: false
+  tool_id_calling: false
+  json_mode: false
+  reasoning: false
+  chat_template_kwargs:
+    enable_thinking: false

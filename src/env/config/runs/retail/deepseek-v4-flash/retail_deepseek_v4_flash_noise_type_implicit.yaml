@@ -1,0 +1,37 @@
+run_id: retail_deepseek_v4_flash_blocker
+base_config: src/env/config/base/env.yaml
+model_ref: openai_deepseek_v4_flash
+domain: retail
+
+data:
+  task_file: src/data/retail/tasks.json
+  query_file: src/data/retail/queries.json
+  baseline_tools_file: src/data/retail/baseline_tools.json
+  noisy_tools_file: src/data/retail/noisy_tools.json
+  blocker_tools_file: src/data/retail/blocker_tools.json
+  datatypes_file: src/data/retail/datatypes.json
+  database_file: src/data/retail/database.json
+  paths_set_catalog_file: src/data/retail/paths_set_catalog.json
+
+output:
+  output_dir: retail/deepseek-v4-flash/implicit
+
+overrides:
+  noise:
+    mode: append_noisy_siblings
+    ratio: 0.0
+    max_total_tools: 30
+  blocker:
+    enable_block: true
+    selection_mode: target_remaining_paths
+    target_remaining_paths: 1
+    remaining_tolerance: 1
+    min_remaining_paths: 1
+    noise_mode: fixed
+    fixed_noise_type: implicit failures
+    seed: 42
+    max_combo_candidates: 20000
+    max_cover_size: 4
+  runtime:
+    max_steps: 100
+    max_concurrency: 32

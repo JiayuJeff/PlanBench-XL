@@ -1,0 +1,14 @@
+Your previous response did not contain a single valid action tag.
+
+Every response MUST use EXACTLY ONE of the following tags:
+- <retrieve_tools>...</retrieve_tools>
+- <tool_call>...</tool_call>
+- <final_answer>...</final_answer>
+
+Do NOT mix multiple tags in one response.
+Do NOT omit the tags.
+Do NOT ask for tool definitions or tool lists in natural language.
+If you need to discover tools, send <retrieve_tools>.
+
+This is attempt {current_attempt} of {max_label_errors}.
+In your next assistant response, use exactly one valid tag and the correct JSON format inside it.

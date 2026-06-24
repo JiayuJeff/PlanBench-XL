@@ -1,0 +1,8 @@
+You tried to call a tool without having all of its required input information available.
+
+Before calling any tool, you MUST ensure that all of its required inputs are already available
+(from previous tool calls).
+
+Please:
+1) Use <retrieve_tools> and <tool_call> to acquire the necessary inputs.
+2) Only call this tool again after you have gathered all required input information.

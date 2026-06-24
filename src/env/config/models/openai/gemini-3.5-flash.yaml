@@ -1,0 +1,20 @@
+model_id: openai_gemini3.5_flash
+provider: openai
+api_style: chat_completions
+model_name: gemini-3.5-flash
+
+auth:
+  api_key_env: OPENAI_API_KEY
+  base_url_env: OPENAI_BASE_URL
+  organization_env: OPENAI_ORG_ID
+
+request:
+  temperature: 0.0
+  max_tokens: 8192
+  timeout_seconds: 600
+  max_retries: 3
+  reasoning_effort: null
+
+capabilities:
+  tool_calling: true
+  json_mode: true

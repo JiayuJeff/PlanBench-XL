@@ -1,0 +1,70 @@
+You are working in the retail domain.
+
+This is a high-level overview of how records are modeled in this benchmark so you can plan tool search and tool use more effectively.
+
+It is only background knowledge. It does not replace the actual tool definitions you retrieve.
+
+At a high level, this retail setup contains these kinds of records:
+
+- customer accounts
+- products and product variants
+- in-progress carts or draft orders
+- finalized orders and order line items
+- saved payment methods, payment attempts, authorizations, and completed payments
+- warehouse or fulfillment requests, shipments, and delivery attempts
+- return requests, return reviews, and refunds
+
+The main business flow usually looks like this:
+
+- a customer account leads to a draft order
+- a draft order contains draft line items
+- a draft order can produce a pricing result or quote
+- that quote can turn into a finalized order
+- a finalized order contains finalized order items
+
+Payment usually follows a separate but connected flow:
+
+- a saved payment method is used to start a payment attempt
+- that payment attempt may go through an authorization step
+- if successful, it becomes a completed payment
+
+Fulfillment usually follows this flow:
+
+- an order can create one or more warehouse or fulfillment requests
+- each warehouse request produces one shipment in this benchmark setup
+- a shipment can have one or more delivery attempts
+
+After-sales usually follows this flow:
+
+- a customer may create a return request for an order
+- that return request may go through an internal review step
+- if approved, it may lead to a refund
+
+Some important modeling distinctions:
+
+- draft-stage records are different from finalized order records
+- a product is different from a specific product variant or SKU
+- a payment attempt is different from an authorization result, and both are different from the final payment record
+- a return request is different from the internal review of that request, and both are different from the final refund record
+- a fulfillment request is different from a shipment, and a shipment is different from one delivery attempt
+
+Useful planning intuition:
+
+- many tasks start from one identifier and ask for information stored on a related record
+- if you know which stage of the business process you are in, it is usually easier to search for the right tools
+- if a task starts from cart or quote information, think in terms of the pre-checkout flow
+- if a task starts from payment information, think in terms of the payment flow or after-sales flow
+- if a task starts from shipping information, think in terms of the fulfillment flow
+- if a task starts from return or refund information, think in terms of the after-sales flow
+
+Business rules in this benchmark:
+
+- returns are whole-order only
+- each order uses exactly one payment account or payment method
+- a single warehouse request is not split into multiple shipments
+
+Use this overview as a guide for planning, but rely on retrieved tool definitions to determine what each tool actually does.
+
+When planning, prefer transitions that follow this business flow instead of jumping to loosely related pieces of information.
+Stay within the retail domain unless the query explicitly requires another domain.
+domain='retail'.

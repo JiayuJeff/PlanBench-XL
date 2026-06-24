@@ -1,0 +1,16 @@
+Your <retrieve_tools> block contained invalid JSON.
+
+Expected structure:
+
+<retrieve_tools>
+{
+  "meta_tool": "by_output_info or by_inputs or by_io_info",
+  "...": "required fields depend on meta_tool"
+}
+</retrieve_tools>
+
+- The outer object MUST contain "meta_tool".
+- Follow the meta-tool schema for required fields.
+
+This is attempt {current_attempt} of {max_retrieval_errors}.
+In your next assistant response, send a valid <retrieve_tools> block with correctly formatted JSON.

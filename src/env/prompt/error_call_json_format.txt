@@ -1,0 +1,22 @@
+Your <tool_call> block contained invalid JSON.
+
+Expected structure:
+
+<tool_call>
+{
+  "tool_id": "T1",
+  "name": "TOOL_NAME_HERE",
+  "arguments": {
+    "arg1": "...",
+    "arg2": "...",
+    "...": "..."
+  }
+}
+</tool_call>
+
+- The outer object MUST contain "arguments" (object) and at least one of:
+  - "tool_id" (string), or
+  - "name" (string).
+
+This is attempt {current_attempt} of {max_call_errors}.
+In your next assistant response, send a valid <tool_call> block with correctly formatted JSON.

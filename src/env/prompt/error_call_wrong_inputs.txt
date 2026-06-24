@@ -1,0 +1,12 @@
+You tried to call a tool with arguments that do not match that tool's actual required inputs.
+
+Tool name:
+{tool_name}
+
+You provided arguments:
+{provided_arguments}
+
+Please:
+1) Compare your argument keys against the tool schema returned in retrieval results.
+2) Rewrite the <tool_call> so that the "arguments" object uses exactly the required parameter names.
+3) If you still do not have all required information, gather it first with other tools.
