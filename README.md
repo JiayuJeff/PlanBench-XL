@@ -260,13 +260,10 @@ Contributions are welcome. Please open an issue or pull request for bug fixes, n
 ## 📚 Citing this work
 
 ```bibtex
-@misc{liu2026planbenchxlevaluatinglonghorizonplanning,
+@article{liu2026planbench,
   title={PlanBench-XL: Evaluating Long-Horizon Planning of LLM Tool-Use Agents in Large-Scale Tool Ecosystems},
-  author={Jiayu Liu and Qihan Lin and Cheng Qian and Rui Wang and Emre Can Acikgoz and Xiaocheng Yang and Jiateng Liu and Zhenhailong Wang and Xiusi Chen and Heng Ji and Dilek Hakkani-Tür},
-  year={2026},
-  eprint={2606.22388},
-  archivePrefix={arXiv},
-  primaryClass={cs.AI},
-  url={https://arxiv.org/abs/2606.22388},
+  author={Liu, Jiayu and Lin, Qihan and Qian, Cheng and Wang, Rui and Acikgoz, Emre Can and Yang, Xiaocheng and Liu, Jiateng and Wang, Zhenhailong and Chen, Xiusi and Ji, Heng and others},
+  journal={arXiv preprint arXiv:2606.22388},
+  year={2026}
 }
 ```
