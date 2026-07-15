@@ -1,4 +1,4 @@
-# PlanBench-XL [Under Construction]
+# PlanBench-XL
 
 ![](figures/PlanBench_XL.png)
 
