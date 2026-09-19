@@ -1,4 +1,4 @@
-# PlanBench-XL
+# [EMNLP 2026 Main] PlanBench-XL
 
 ![](figures/PlanBench_XL.png)
 
